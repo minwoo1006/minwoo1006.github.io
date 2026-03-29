@@ -1,0 +1,306 @@
+/* 기본 설정 및 변수 지정 (신뢰감을 주는 네이비 톤) */
+:root {
+    --primary-color: #0f4c81; /* 클래식 블루 */
+    --secondary-color: #333333;
+    --text-color: #555555;
+    --bg-color: #f8f9fa;
+    --white: #ffffff;
+    --border-color: #e0e0e0;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Pretendard', sans-serif;
+}
+
+body {
+    background-color: var(--white);
+    color: var(--secondary-color);
+    line-height: 1.6;
+}
+
+/* 네비게이션 바 */
+#navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.95);
+    border-bottom: 1px solid var(--border-color);
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+.nav-content {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--secondary-color);
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+.nav-links a:hover {
+    color: var(--primary-color);
+}
+
+/* 메인 레이아웃 설정 */
+main {
+    max-width: 900px;
+    margin: 80px auto 0;
+    padding: 2rem;
+}
+
+section {
+    padding: 4rem 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+section:last-of-type {
+    border-bottom: none;
+}
+
+.section-title {
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-bottom: 2rem;
+    font-weight: 700;
+}
+
+/* 1. About / Hero */
+
+/* 연락처 정보 리스트 스타일 */
+.contact-info {
+    list-style: none;
+    margin-bottom: 1.5rem;
+    padding: 0;
+}
+
+.contact-info li {
+    font-size: 1rem;
+    color: var(--secondary-color);
+    margin-bottom: 0.3rem;
+}
+
+.contact-info li strong {
+    color: var(--primary-color);
+    width: 100px;
+    display: inline-block;
+}
+
+.hero-container {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+}
+
+.profile-img img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: contain;
+    border: 3px solid var(--border-color);
+}
+
+.hero-text h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.hero-text .title {
+    font-size: 1.5rem;
+    color: var(--text-color);
+    font-weight: 400;
+}
+
+.slogan {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.summary {
+    color: var(--text-color);
+    margin-bottom: 1.5rem;
+}
+
+.btn {
+    display: inline-block;
+    padding: 0.6rem 1.5rem;
+    background-color: var(--primary-color);
+    color: var(--white);
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 500;
+    margin-right: 0.5rem;
+    transition: 0.2s;
+}
+
+.btn.outline {
+    background-color: transparent;
+    color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+}
+
+.btn:hover {
+    opacity: 0.8;
+}
+
+/* 2. Experience Timeline */
+.timeline-item {
+    display: flex;
+    margin-bottom: 2.5rem;
+}
+
+.timeline-date {
+    width: 200px;
+    flex-shrink: 0;
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+.timeline-content h3 {
+    margin: 0.5rem 0 0.2rem;
+    font-size: 1.3rem;
+}
+
+.timeline-content h4 {
+    font-weight: 500;
+    color: var(--text-color);
+    margin-bottom: 0.8rem;
+}
+
+.timeline-content ul {
+    padding-left: 1.2rem;
+    color: var(--text-color);
+}
+
+/* 뱃지(Badge) 스타일 */
+.badge {
+    padding: 0.3rem 0.6rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--white);
+}
+.badge.internship { background-color: #0f4c81; }
+.badge.volunteer { background-color: #2e8b57; }
+.badge.global { background-color: #d97706; }
+
+/* 3. Skills */
+.skills-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.tags span {
+    display: inline-block;
+    background-color: var(--bg-color);
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    margin: 0.3rem 0.3rem 0 0;
+    font-size: 0.9rem;
+    border: 1px solid var(--border-color);
+}
+
+/* 4. Projects */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 1.5rem;
+}
+
+.project-card {
+    border: 1px solid var(--border-color);
+    padding: 1.5rem;
+    border-radius: 8px;
+    transition: transform 0.2s;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.project-card h3 {
+    margin-bottom: 0.3rem;
+}
+
+.project-card .date {
+    font-size: 0.9rem;
+    color: #888;
+    margin-bottom: 1rem;
+}
+
+.project-card .desc {
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+    color: var(--text-color);
+}
+
+.tech-stack span {
+    font-size: 0.8rem;
+    color: var(--primary-color);
+    background-color: #eef2f6;
+    padding: 0.2rem 0.6rem;
+    border-radius: 12px;
+    margin-right: 0.4rem;
+}
+
+/* 푸터 */
+footer {
+    text-align: center;
+    padding: 2rem;
+    color: #888;
+    font-size: 0.9rem;
+}
+
+/* 페이드인 애니메이션용 클래스 (JS 연동) */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* 반응형 (모바일) */
+@media (max-width: 768px) {
+    .hero-container {
+        flex-direction: column;
+        text-align: center;
+    }
+    .timeline-item {
+        flex-direction: column;
+    }
+    .timeline-date {
+        margin-bottom: 0.5rem;
+    }
+    .nav-links {
+        display: none; /* 모바일에서는 심플하게 메뉴 숨김 처리 (필요시 햄버거 메뉴 추가 가능) */
+    }
+}
